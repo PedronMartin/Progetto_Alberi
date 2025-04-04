@@ -18,24 +18,32 @@
         crossorigin="">
     </script>
 
-    <!-- libreria OSM API (da rivedere se serve effettivamente)
-    <script src="https://cdn.jsdelivr.net/npm/osmtogeojson@3"></script> -->
+    <!-- API per conversione dati in GeoJson ( se serve documentazione: https://github.com/mapbox/leaflet-omnivore?tab=readme-ov-file ) -->
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+    <!-- css principale -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <!-- corpo pagina -->
-<body bgcolor="LIGHTGREY">
+<body bgcolor=#654321>
     <main>
         <section>
 
-            <!-- Identificatore mappa -->
+            <!-- Titolo -->
+            <h1 id="Title">Titolo progetto</h1>
+
+            <!-- immagine di sfondo -->
+            <div id="sfondo"></div>
+
+            <!-- mappa -->
             <div id="map"></div>
 
-            <!-- CSS -->
-            <style>
-            #map { height: 900px;
-                    width: 100%; }
-            </style>
+            <!-- menù a tendina progetti -->
+            <div id="Lista_Progetti">
+                <select id="progetti">
+                </select>
 
             <!-- Script JS -->
             <script type="module" src = "Main.js"></script>

@@ -1,0 +1,11 @@
+{"type":"FeatureCollection", "alberi": [
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.43390711324345, 10.994572317584396]}, "id_albero": 1, "id_progetto": 1},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.434765112785584, 10.994722953166708]}, "id_albero": 2, "id_progetto": 1},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.43453552376247, 10.994366682002081]}, "id_albero": 3, "id_progetto": 1},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.43437483539517, 10.99492609500998]}, "id_albero": 4, "id_progetto": 1},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.4345999999999, 10.994969460425318]}, "id_albero": 5, "id_progetto": 1},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.43435664171084, 10.994771364210948]}, "id_albero": 2, "id_progetto": 2},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.43422821211159, 10.995056191255994]}, "id_albero": 4, "id_progetto": 2},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.43421152398947, 10.994690682002103]}, "id_albero": 1, "id_progetto": 2},
+    {"type":"Feature","geometry":{"type":"Point","coordinates":[45.43407046659789, 10.9946099531667]}, "id_albero": 5, "id_progetto": 2}
+]}

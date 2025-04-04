@@ -1,0 +1,55 @@
+#map {
+    height: 650px;
+    width: 92%;
+    align-self: center;
+    top: 150px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#Title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+    font-size: 36px;
+    margin: 0;
+    padding: 8px 15px;
+    color: rgb(100, 177, 49);
+    font-family: sans-serif;
+    border-radius: 15px;
+    letter-spacing: 1px;
+}
+
+#sfondo {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    opacity: 40%;
+    width: 100%;
+    min-height: 100vh;
+    background: url('./sfondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+#Lista_Progetti {
+    position: absolute;
+    width: 15%;
+    border: 3px solid black;
+    border-radius: 5px;
+    color: #384911;
+    opacity: 90%;
+    top: 160px;
+}
+
+#progetti {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    opacity: 80%;
+    top: 50px;
+}
