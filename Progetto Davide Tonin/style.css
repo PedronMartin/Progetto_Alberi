@@ -42,7 +42,7 @@
     border: 3px solid black;
     border-radius: 5px;
     color: #384911;
-    opacity: 90%;
+    opacity: 92%;
     top: 160px;
 }
 
@@ -52,4 +52,8 @@
     font-size: 16px;
     opacity: 80%;
     top: 50px;
+}
+
+.dettagli-albero {
+    display: none;
 }

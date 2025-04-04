@@ -19,7 +19,8 @@
     </script>
 
     <!-- API per conversione dati in GeoJson ( se serve documentazione: https://github.com/mapbox/leaflet-omnivore?tab=readme-ov-file ) -->
-    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+    <!-- per ora non usata
+     <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script> -->
 
     <!-- css principale -->
     <link rel="stylesheet" href="style.css">
@@ -44,6 +45,12 @@
             <div id="Lista_Progetti">
                 <select id="progetti">
                 </select>
+
+            <!-- sezione dettagli dell'albero richiesto -->
+            <div id="dettagli-albero" class = "dettagli-albero">
+                <h2 id="titolo-albero">information</h2>
+                <p id="descrizione-albero"></p>
+            </div>
 
             <!-- Script JS -->
             <script type="module" src = "Main.js"></script>

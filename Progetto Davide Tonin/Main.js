@@ -40,8 +40,12 @@ async function updateMap(id_progetto) {
 
     //aggiunge marker
     alberi.forEach(albero => {
-        L.marker([albero.geometry.coordinates[0], albero.geometry.coordinates[1]], {icon: realTree})
+        var marker = L.marker([albero.geometry.coordinates[0], albero.geometry.coordinates[1]], {icon: realTree})
             .addTo(map);
+
+        //contenuto del popup
+        marker.bindPopup(`<b>Albero di tipo: ${albero.id_albero}</b><br><a href="#" data-id="${albero.id}">Vedi dettagli</a>`);
+        
     });
 
     //centro la mappa sul primo albero del progetto scelto
@@ -58,7 +62,6 @@ function deleteMarker() {
 }
 
 populateList();
-
 
 /*
 
