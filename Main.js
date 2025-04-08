@@ -81,7 +81,7 @@ function getMarkerStyle(albero) {
 //marker personalizzato - albero reale
 const realTree = L.icon({
     iconUrl: "./realTreeIMG.png",
-    iconSize: [22, 25],  //larghezza - altezza
+    iconSize: [15, 18],  //larghezza - altezza
     popupAnchor: [0, 0], // !!! da capire successivamente se il marker parte dal basso o dal centro delle coordinate, sfalsando la posizione!!!
     shadowUrl: null,
     shadowSize: [0, 0],
