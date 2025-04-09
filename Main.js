@@ -2,6 +2,7 @@ import * as model from "./Model.js";
 
 //creazione mappa
 var map = L.map('map').fitWorld();
+map.maxZoom = 50;
 
 //collegamento OpenStreetMaps
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -36,15 +37,17 @@ async function updateMap(id_progetto) {
 
     const alberi = await model.getAlberi(id_progetto);
 
+    console.log(alberi);
+
     deleteMarker();
 
     //aggiunge marker
     alberi.forEach(albero => {
-        var marker = L.marker([albero.geometry.coordinates[0], albero.geometry.coordinates[1]], {icon: realTree})
+        var marker = L.marker([albero.geometry.coordinates[0], albero.geometry.coordinates[1]], {icon: getMarkerStyle(albero)})
             .addTo(map);
 
         //contenuto del popup
-        marker.bindPopup(`<b>Albero di tipo: ${albero.id_albero}</b><br><a href="#" data-id="${albero.id}">Vedi dettagli</a>`);
+        marker.bindPopup(`<b>Albero di tipo: ${albero.id_albero}</b><br><a href="#" data-id="${albero.id}">Vedi dettagli <img id=img1 src=./IMG/${albero.typeTree}IMG.png></a>`);
         
     });
 
@@ -63,25 +66,41 @@ function deleteMarker() {
 
 populateList();
 
-/*
-
-TODO:
-
-//stilizzare i marker in base a se sono reali o virtuali
+//stilizzare i marker in base alla tipologia (reale, virtuale, disponibile)
 function getMarkerStyle(albero) {
-    var bool = albero.type === "realTree" ? realTree : virtualTree;
-    if(bool)
-        return L.marker...;
+    var type = albero.typeTree;
+    if(type === "realTree")
+        return realTree;
+    else if(type === "virtualTree")
+        return virtualTree;
     else
-        return L.marker(...);
+        return availableTree;
 }
-
-*/
 
 //marker personalizzato - albero reale
 const realTree = L.icon({
-    iconUrl: "./realTreeIMG.png",
-    iconSize: [15, 18],  //larghezza - altezza
+    iconUrl: "./IMG/realTreeIMG.png",
+    iconSize: [5, 8],  //larghezza - altezza
+    popupAnchor: [0, 0], // !!! da capire successivamente se il marker parte dal basso o dal centro delle coordinate, sfalsando la posizione!!!
+    shadowUrl: null,
+    shadowSize: [0, 0],
+    shadowAnchor: [0, 0]
+});
+
+//marker personalizzato - albero virtuale
+const virtualTree = L.icon({
+    iconUrl: "./IMG/virtualTreeIMG.png",
+    iconSize: [5, 8],  //larghezza - altezza
+    popupAnchor: [0, 0], // !!! da capire successivamente se il marker parte dal basso o dal centro delle coordinate, sfalsando la posizione!!!
+    shadowUrl: null,
+    shadowSize: [0, 0],
+    shadowAnchor: [0, 0]
+});
+
+//marker personalizzato - posizione disponibile reale
+const availableTree = L.icon({
+    iconUrl: "./IMG/availableTreeIMG.png",
+    iconSize: [5, 8],  //larghezza - altezza
     popupAnchor: [0, 0], // !!! da capire successivamente se il marker parte dal basso o dal centro delle coordinate, sfalsando la posizione!!!
     shadowUrl: null,
     shadowSize: [0, 0],
