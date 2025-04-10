@@ -2,11 +2,11 @@ import * as model from "./Model.js";
 
 //creazione mappa
 var map = L.map('map').fitWorld();
-map.maxZoom = 50;
+map.setMaxZoom(30);
 
 //collegamento OpenStreetMaps
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 17,
+    maxZoom: 22,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"datasetnStreetMap</a>'
 }).addTo(map);
 
@@ -52,7 +52,7 @@ async function updateMap(id_progetto) {
     });
 
     //centro la mappa sul primo albero del progetto scelto
-    map.setView([alberi[0].geometry.coordinates[0], alberi[0].geometry.coordinates[1]], 25);
+    map.setView([alberi[0].geometry.coordinates[0], alberi[0].geometry.coordinates[1]], 17);
 }
 
 //funzione per ripulire la mappa
@@ -80,7 +80,7 @@ function getMarkerStyle(albero) {
 //marker personalizzato - albero reale
 const realTree = L.icon({
     iconUrl: "./IMG/realTreeIMG.png",
-    iconSize: [5, 8],  //larghezza - altezza
+    iconSize: [15, 18],  //larghezza - altezza
     popupAnchor: [0, 0], // !!! da capire successivamente se il marker parte dal basso o dal centro delle coordinate, sfalsando la posizione!!!
     shadowUrl: null,
     shadowSize: [0, 0],
@@ -90,7 +90,7 @@ const realTree = L.icon({
 //marker personalizzato - albero virtuale
 const virtualTree = L.icon({
     iconUrl: "./IMG/virtualTreeIMG.png",
-    iconSize: [5, 8],  //larghezza - altezza
+    iconSize: [15, 18],  //larghezza - altezza
     popupAnchor: [0, 0], // !!! da capire successivamente se il marker parte dal basso o dal centro delle coordinate, sfalsando la posizione!!!
     shadowUrl: null,
     shadowSize: [0, 0],
@@ -100,7 +100,7 @@ const virtualTree = L.icon({
 //marker personalizzato - posizione disponibile reale
 const availableTree = L.icon({
     iconUrl: "./IMG/availableTreeIMG.png",
-    iconSize: [5, 8],  //larghezza - altezza
+    iconSize: [15, 18],  //larghezza - altezza
     popupAnchor: [0, 0], // !!! da capire successivamente se il marker parte dal basso o dal centro delle coordinate, sfalsando la posizione!!!
     shadowUrl: null,
     shadowSize: [0, 0],
